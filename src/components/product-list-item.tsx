@@ -1,9 +1,11 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Product } from '../../../assets/types/product';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Product } from '../../assets/types/product';
+import { Link } from 'expo-router';
 
 export const ProductListItem = ({ product }: { product: Product }) => {
   return (
-    <View style={styles.item}>
+    <Link asChild href={`/product/${product.slug}`}>
+      <Pressable style={styles.item}>
       <View style={styles.itemImageContainer}>
         <Image source={product.heroImage} style={styles.itemImage} />
       </View>
@@ -11,7 +13,8 @@ export const ProductListItem = ({ product }: { product: Product }) => {
         <Text style={styles.itemTitle}>{product.title}</Text>
         <Text style={styles.itemPrice}>${product.price.toFixed(2)}</Text>
       </View>
-    </View>
+    </Pressable>
+    </Link>
   );
 };
 
