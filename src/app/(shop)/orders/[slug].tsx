@@ -22,6 +22,7 @@ const OrderDetails = () => {
       </View>
       <Text style={styles.date}>{order.date}</Text>
       <Text style={styles.itemsTitle}>Items Ordered:</Text>
+      
       <FlatList 
         data={order.items}
         keyExtractor={item => item.id.toString()}
