@@ -15,6 +15,7 @@ const Category = () => {
 
   return (
     <View style={styles.container}>
+      
       <Stack.Screen options={{ title: category.name }} />
       <Image source={{ uri: category.imageUrl }} style={styles.categoryImage} />
       <Text style={styles.categoryName}>{category.name}</Text>
